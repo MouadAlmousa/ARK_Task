@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="Task.Pages.MainPage" Title="Script List">
+
+    <StackLayout>
+        <syncfusion:SfListView x:Name="ScriptsListView"
+                   ItemsSource="{Binding ScriptsList}" ItemSize="100" AllowSwiping="True" SwipeEnded="SfListView_SwipeEnded" >
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Teal" FontSize="21" />
+                        <Label  Text="{Binding Code}" TextColor="Teal" FontSize="15"/>
+                        <Label  Text="{Binding Type}" TextColor="Teal" FontSize="15"/>
+
+                    </StackLayout>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+            <syncfusion:SfListView.RightSwipeTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="Red">
+                        <Label Text="Delete" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.RightSwipeTemplate>
+        </syncfusion:SfListView>
+        <buttons:SfButton Text="Add Script" Command="{Binding AddScriptCommand}"/>
+    </StackLayout>
+
+</ContentPage>
