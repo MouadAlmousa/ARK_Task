@@ -11,15 +11,3 @@ namespace Task.Models
         public string Type { get; set; }
     }
 }
-
-
-
-
-
-
-enum Types
-{
-    Type0,
-    Type1,
-    Type2
-}
